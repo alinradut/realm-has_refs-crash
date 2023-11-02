@@ -1,0 +1,37 @@
+/Users/x/Library/Developer/Xcode/DerivedData/realmcrash-bguqhgawqksoqyadfkutjutwgwix/SourcePackages/checkouts/realm-core/src/realm/array.hpp:751: [realm-core-13.23.1] Assertion failed: has_refs()
+0   realmcrash share                    0x0000000103c0a1a8 _ZN5realm4utilL18terminate_internalERNSt3__118basic_stringstreamIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE + 28
+1   realmcrash share                    0x0000000103c0a188 _ZN5realm4util19terminate_with_infoEPKcS2_lS2_OSt16initializer_listINS0_9PrintableEE + 308
+2   realmcrash share                    0x0000000103c0a054 _ZN5realm4util19terminate_with_infoEPKcS2_lS2_OSt16initializer_listINS0_9PrintableEE + 0
+3   realmcrash share                    0x00000001033ed8e4 _ZNK5realm5Array20get_as_ref_or_taggedEm + 84
+4   realmcrash share                    0x0000000103487f04 _ZNK5realm5Group8set_sizeEv + 184
+5   realmcrash share                    0x000000010348700c _ZN5realm5Group6attachEmbbmy + 412
+6   realmcrash share                    0x000000010348a134 _ZN5realm5Group13attach_sharedEmmbNS_9VersionIDE + 264
+7   realmcrash share                    0x0000000103ba1360 _ZN5realm11TransactionC2ENSt3__110shared_ptrINS_2DBEEEPNS_9SlabAllocERNS3_12ReadLockInfoENS3_13TransactStageE + 400
+8   realmcrash share                    0x0000000103ba1638 _ZN5realm11TransactionC1ENSt3__110shared_ptrINS_2DBEEEPNS_9SlabAllocERNS3_12ReadLockInfoENS3_13TransactStageE + 60
+9   realmcrash share                    0x000000010342e028 _ZN12_GLOBAL__N_120make_transaction_refIJNSt3__110shared_ptrIN5realm2DBEEEPNS3_9SlabAllocERNS4_12ReadLockInfoENS4_13TransactStageEEEENS2_INS3_11TransactionEEEDpOT_ + 112
+10  realmcrash share                    0x00000001034268c4 _ZN5realm2DB10start_readENS_9VersionIDE + 312
+11  realmcrash share                    0x00000001036262a8 _ZN5realm5_impl16RealmCoordinator10begin_readENS_9VersionIDEb + 200
+12  realmcrash share                    0x0000000103756754 _ZN5realm5RealmC2ENS_11RealmConfigENSt3__18optionalINS_9VersionIDEEENS2_10shared_ptrINS_5_impl16RealmCoordinatorEEENS0_13MakeSharedTagE + 528
+13  realmcrash share                    0x0000000103756d74 _ZN5realm5RealmC1ENS_11RealmConfigENSt3__18optionalINS_9VersionIDEEENS2_10shared_ptrINS_5_impl16RealmCoordinatorEEENS0_13MakeSharedTagE + 52
+14  realmcrash share                    0x000000010362cce8 _ZNSt3__120__shared_ptr_emplaceIN5realm5RealmENS_9allocatorIS2_EEEC2B7v160006IJNS1_11RealmConfigENS_8optionalINS1_9VersionIDEEENS_10shared_ptrINS1_5_impl16RealmCoordinatorEEENS2_13MakeSharedTagEEEES4_DpOT_ + 208
+15  realmcrash share                    0x000000010362c964 _ZNSt3__120__shared_ptr_emplaceIN5realm5RealmENS_9allocatorIS2_EEEC1B7v160006IJNS1_11RealmConfigENS_8optionalINS1_9VersionIDEEENS_10shared_ptrINS1_5_impl16RealmCoordinatorEEENS2_13MakeSharedTagEEEES4_DpOT_ + 60
+16  realmcrash share                    0x000000010362c854 _ZNSt3__115allocate_sharedB7v160006IN5realm5RealmENS_9allocatorIS2_EEJNS1_11RealmConfigENS_8optionalINS1_9VersionIDEEENS_10shared_ptrINS1_5_impl16RealmCoordinatorEEENS2_13MakeSharedTagEEvEENS9_IT_EERKT0_DpOT1_ + 84
+17  realmcrash share                    0x000000010362c7f4 _ZNSt3__111make_sharedB7v160006IN5realm5RealmEJNS1_11RealmConfigENS_8optionalINS1_9VersionIDEEENS_10shared_ptrINS1_5_impl16RealmCoordinatorEEENS2_13MakeSharedTagEEvEENS7_IT_EEDpOT0_ + 76
+18  realmcrash share                    0x0000000103625174 _ZN5realm5Realm17make_shared_realmENS_11RealmConfigENSt3__18optionalINS_9VersionIDEEENS2_10shared_ptrINS_5_impl16RealmCoordinatorEEE + 52
+19  realmcrash share                    0x0000000103624560 _ZN5realm5_impl16RealmCoordinator12do_get_realmEONS_11RealmConfigERNSt3__110shared_ptrINS_5RealmEEENS4_8optionalINS_9VersionIDEEERNS_4util17CheckedUniqueLockEb + 412
+20  realmcrash share                    0x00000001036242e4 _ZN5realm5_impl16RealmCoordinator9get_realmENS_11RealmConfigENSt3__18optionalINS_9VersionIDEEE + 760
+21  realmcrash share                    0x0000000103757758 _ZN5realm5Realm16get_shared_realmENS_11RealmConfigE + 144
+22  realmcrash share                    0x0000000103184038 +[RLMRealm realmWithConfiguration:confinedTo:error:] + 940
+23  realmcrash share                    0x0000000103183ba8 +[RLMRealm realmWithConfiguration:queue:error:] + 156
+24  realmcrash share                    0x00000001032215b0 $sSo8RLMRealmC13configuration5queueABSo0A13ConfigurationC_So012OS_dispatch_C0CSgtKcfCTO + 144
+25  realmcrash share                    0x00000001032dc56c $s10RealmSwift0A0V13configuration5queueA2C13ConfigurationV_So012OS_dispatch_D0CSgtKcfC + 192
+26  realmcrash share                    0x0000000102f01c20 $s16realmcrash_share11RealmHelperC16readOnlyInstance0C5Swift0C0VyFZ + 528
+27  realmcrash share                    0x0000000102f02c54 $s16realmcrash_share11RealmHelperC13startReadTestyyFZyyYbcfU_ + 68
+28  realmcrash share                    0x0000000102f028b4 $sIegh_IeyBh_TR + 48
+29  libdispatch.dylib                   0x0000000181e77094 9CCDBDE3-15E1-3A45-B330-4A5E2C3F92BD + 405652
+30  libdispatch.dylib                   0x0000000181e78094 9CCDBDE3-15E1-3A45-B330-4A5E2C3F92BD + 409748
+31  libdispatch.dylib                   0x0000000181e1a858 9CCDBDE3-15E1-3A45-B330-4A5E2C3F92BD + 26712
+32  libdispatch.dylib                   0x0000000181e27b94 9CCDBDE3-15E1-3A45-B330-4A5E2C3F92BD + 80788
+33  libdispatch.dylib                   0x0000000181e2839c 9CCDBDE3-15E1-3A45-B330-4A5E2C3F92BD + 82844
+34  libsystem_pthread.dylib             0x00000001dd5d8dc4 _pthread_wqthread + 224
+35  libsystem_pthread.dylib             0x00000001dd5d892c start_wqthread + 8

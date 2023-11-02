@@ -1,0 +1,164 @@
+-------------------------------------
+Translated Report (Full Report Below)
+-------------------------------------
+
+Incident Identifier: C6993759-C53A-45D0-A9E7-238EB3240236
+CrashReporter Key:   3398b348cc29922d801c4b9772f7dfced750e88f
+Hardware Model:      iPhone8,1
+Process:             realmcrash share [6687]
+Path:                /private/var/containers/Bundle/Application/55FE472E-9E9C-4582-ADF2-9F4BE9E077AB/realmcrash.app/PlugIns/realmcrash share.appex/realmcrash share
+Identifier:          com.example.realmcrash.realmcrash-share
+Version:             1.0 (1)
+Code Type:           ARM-64 (Native)
+Role:                Background
+Parent Process:      launchd [1]
+Coalition:           com.example.realmcrash.realmcrash-share [5650]
+
+Date/Time:           2023-11-02 22:29:52.9821 +0200
+Launch Time:         2023-11-02 22:29:51.2624 +0200
+OS Version:          iPhone OS 15.8 (19H370)
+Release Type:        User
+Baseband Version:    9.61.00
+Report Version:      104
+
+Exception Type:  EXC_CRASH (SIGABRT)
+Exception Codes: 0x0000000000000000, 0x0000000000000000
+Exception Note:  EXC_CORPSE_NOTIFY
+Triggered by Thread:  2
+
+Application Specific Information:
+abort() called
+
+
+Thread 0 name:   Dispatch queue: com.apple.main-thread
+Thread 0:
+0   libsystem_kernel.dylib        	       0x1bca71aac mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1bca7207c mach_msg + 72
+2   CoreFoundation                	       0x18212bc88 __CFRunLoopServiceMachPort + 368
+3   CoreFoundation                	       0x18212ff90 __CFRunLoopRun + 1160
+4   CoreFoundation                	       0x182143174 CFRunLoopRunSpecific + 572
+5   GraphicsServices              	       0x1a2c5e988 GSEventRunModal + 160
+6   UIKitCore                     	       0x184945a88 -[UIApplication _run] + 1080
+7   UIKitCore                     	       0x1846def78 UIApplicationMain + 336
+8   libxpc.dylib                  	       0x1dd60bdc4 _xpc_objc_main + 440
+9   libxpc.dylib                  	       0x1dd60de30 xpc_main + 152
+10  Foundation                    	       0x18389611c -[NSXPCListener resume] + 292
+11  PlugInKit                     	       0x1bfb9c4e4 0x1bfb7f000 + 120036
+12  PlugInKit                     	       0x1bfb868b4 0x1bfb7f000 + 30900
+13  PlugInKit                     	       0x1bfb85910 0x1bfb7f000 + 26896
+14  ExtensionFoundation           	       0x1cb9343bc EXExtensionMain + 296
+15  Foundation                    	       0x1838f558c NSExtensionMain + 216
+16  dyld                          	       0x1060644d0 start + 444
+
+Thread 1:
+0   libsystem_pthread.dylib       	       0x1dd5d8924 start_wqthread + 0
+
+Thread 2 name:   Dispatch queue: com.apple.root.default-qos
+Thread 2 Crashed:
+0   libsystem_kernel.dylib        	       0x1bca77bbc __pthread_kill + 8
+1   libsystem_pthread.dylib       	       0x1dd5e4844 pthread_kill + 208
+2   libsystem_c.dylib             	       0x18c8a46ac abort + 124
+3   libc++abi.dylib               	       0x199adbde4 abort_message + 128
+4   libc++abi.dylib               	       0x199acc66c demangling_terminate_handler() + 276
+5   libobjc.A.dylib               	       0x1999e9908 _objc_terminate() + 140
+6   libc++abi.dylib               	       0x199adb280 std::__terminate(void (*)()) + 16
+7   libc++abi.dylib               	       0x199adb228 std::terminate() + 60
+8   realmcrash share              	       0x1033633e0 realm::Allocator::translate(unsigned long) const + 80
+9   realmcrash share              	       0x1034c9898 realm::StringIndex::StringIndex(unsigned long, realm::ArrayParent*, unsigned long, realm::ClusterColumn const&, realm::Allocator&) + 120
+10  realmcrash share              	       0x1034beea4 realm::StringIndex::StringIndex(unsigned long, realm::ArrayParent*, unsigned long, realm::ClusterColumn const&, realm::Allocator&) + 68
+11  realmcrash share              	       0x103b5cb3c std::__1::__unique_if<realm::StringIndex>::__unique_single std::__1::make_unique[abi:v160006]<realm::StringIndex, unsigned long&, realm::Array*, unsigned long&, realm::ClusterColumn&, realm::Allocator&>(unsigned long&, realm::Array*&&, unsigned long&, realm::ClusterColumn&, realm::Allocator&) + 148
+12  realmcrash share              	       0x103b4fb10 realm::Table::refresh_index_accessors() + 420
+13  realmcrash share              	       0x10347eb00 realm::Group::create_table_accessor(unsigned long) + 1036
+14  realmcrash share              	       0x10347e6a4 realm::Group::do_get_table(unsigned long) + 240
+15  realmcrash share              	       0x103485e2c realm::Group::do_get_table(unsigned long) const + 32
+16  realmcrash share              	       0x103480740 realm::Group::get_table(realm::TableKey) const + 80
+17  realmcrash share              	       0x103666ee4 realm::ObjectSchema::ObjectSchema(realm::Group const&, realm::StringData, realm::TableKey) + 212
+18  realmcrash share              	       0x1036675a8 realm::ObjectSchema::ObjectSchema(realm::Group const&, realm::StringData, realm::TableKey) + 68
+19  realmcrash share              	       0x1036810ec void std::__1::allocator<realm::ObjectSchema>::construct[abi:v160006]<realm::ObjectSchema, realm::Group const&, realm::StringData&, realm::TableKey&>(realm::ObjectSchema*, realm::Group const&, realm::StringData&, realm::TableKey&) + 84
+20  realmcrash share              	       0x10368101c void std::__1::allocator_traits<std::__1::allocator<realm::ObjectSchema> >::construct[abi:v160006]<realm::ObjectSchema, realm::Group const&, realm::StringData&, realm::TableKey&, void>(std::__1::allocator<realm::ObjectSchema>&, realm::ObjectSchema*, realm::Group const&, realm::StringData&, realm::TableKey&) + 56
+21  realmcrash share              	       0x103680e60 void std::__1::vector<realm::ObjectSchema, std::__1::allocator<realm::ObjectSchema> >::__construct_one_at_end[abi:v160006]<realm::Group const&, realm::StringData&, realm::TableKey&>(realm::Group const&, realm::StringData&, realm::TableKey&) + 92
+22  realmcrash share              	       0x1036764cc realm::ObjectSchema& std::__1::vector<realm::ObjectSchema, std::__1::allocator<realm::ObjectSchema> >::emplace_back<realm::Group const&, realm::StringData&, realm::TableKey&>(realm::Group const&, realm::StringData&, realm::TableKey&) + 92
+23  realmcrash share              	       0x10367611c realm::ObjectStore::schema_from_group(realm::Group const&) + 300
+24  realmcrash share              	       0x10374acf0 realm::Realm::read_schema_from_group_if_needed() + 172
+25  realmcrash share              	       0x10374aa7c realm::Realm::Realm(realm::RealmConfig, std::__1::optional<realm::VersionID>, std::__1::shared_ptr<realm::_impl::RealmCoordinator>, realm::Realm::MakeSharedTag) + 568
+26  realmcrash share              	       0x10374b074 realm::Realm::Realm(realm::RealmConfig, std::__1::optional<realm::VersionID>, std::__1::shared_ptr<realm::_impl::RealmCoordinator>, realm::Realm::MakeSharedTag) + 52
+27  realmcrash share              	       0x103620fe8 std::__1::__shared_ptr_emplace<realm::Realm, std::__1::allocator<realm::Realm> >::__shared_ptr_emplace[abi:v160006]<realm::RealmConfig, std::__1::optional<realm::VersionID>, std::__1::shared_ptr<realm::_impl::RealmCoordinator>, realm::Realm::MakeSharedTag>(std::__1::allocator<realm::Realm>, realm::RealmConfig&&, std::__1::optional<realm::VersionID>&&, std::__1::shared_ptr<realm::_impl::RealmCoordinator>&&, realm::Realm::MakeSharedTag&&) + 208
+28  realmcrash share              	       0x103620c64 std::__1::__shared_ptr_emplace<realm::Realm, std::__1::allocator<realm::Realm> >::__shared_ptr_emplace[abi:v160006]<realm::RealmConfig, std::__1::optional<realm::VersionID>, std::__1::shared_ptr<realm::_impl::RealmCoordinator>, realm::Realm::MakeSharedTag>(std::__1::allocator<realm::Realm>, realm::RealmConfig&&, std::__1::optional<realm::VersionID>&&, std::__1::shared_ptr<realm::_impl::RealmCoordinator>&&, realm::Realm::MakeSharedTag&&) + 60
+29  realmcrash share              	       0x103620b54 std::__1::shared_ptr<realm::Realm> std::__1::allocate_shared[abi:v160006]<realm::Realm, std::__1::allocator<realm::Realm>, realm::RealmConfig, std::__1::optional<realm::VersionID>, std::__1::shared_ptr<realm::_impl::RealmCoordinator>, realm::Realm::MakeSharedTag, void>(std::__1::allocator<realm::Realm> const&, realm::RealmConfig&&, std::__1::optional<realm::VersionID>&&, std::__1::shared_ptr<realm::_impl::RealmCoordinator>&&, realm::Realm::MakeSharedTag&&) + 84
+30  realmcrash share              	       0x103620af4 std::__1::shared_ptr<realm::Realm> std::__1::make_shared[abi:v160006]<realm::Realm, realm::RealmConfig, std::__1::optional<realm::VersionID>, std::__1::shared_ptr<realm::_impl::RealmCoordinator>, realm::Realm::MakeSharedTag, void>(realm::RealmConfig&&, std::__1::optional<realm::VersionID>&&, std::__1::shared_ptr<realm::_impl::RealmCoordinator>&&, realm::Realm::MakeSharedTag&&) + 76
+31  realmcrash share              	       0x103619474 realm::Realm::make_shared_realm(realm::RealmConfig, std::__1::optional<realm::VersionID>, std::__1::shared_ptr<realm::_impl::RealmCoordinator>) + 52
+32  realmcrash share              	       0x103618860 realm::_impl::RealmCoordinator::do_get_realm(realm::RealmConfig&&, std::__1::shared_ptr<realm::Realm>&, std::__1::optional<realm::VersionID>, realm::util::CheckedUniqueLock&, bool) + 412
+33  realmcrash share              	       0x1036185e4 realm::_impl::RealmCoordinator::get_realm(realm::RealmConfig, std::__1::optional<realm::VersionID>) + 760
+34  realmcrash share              	       0x10374ba58 realm::Realm::get_shared_realm(realm::RealmConfig) + 144
+35  realmcrash share              	       0x103178338 +[RLMRealm realmWithConfiguration:confinedTo:error:] + 940
+36  realmcrash share              	       0x103177ea8 +[RLMRealm realmWithConfiguration:queue:error:] + 156
+37  realmcrash share              	       0x1032158b0 @nonobjc RLMRealm.__allocating_init(configuration:queue:) + 144
+38  realmcrash share              	       0x1032d086c Realm.init(configuration:queue:) + 192
+39  realmcrash share              	       0x102ef5c20 static RealmHelper.readOnlyInstance() + 528
+40  realmcrash share              	       0x102ef6f54 closure #1 in static RealmHelper.startReadTest() + 68
+41  realmcrash share              	       0x102ef6bb4 thunk for @escaping @callee_guaranteed @Sendable () -> () + 48
+42  libdispatch.dylib             	       0x181e77094 _dispatch_call_block_and_release + 24
+43  libdispatch.dylib             	       0x181e78094 _dispatch_client_callout + 16
+44  libdispatch.dylib             	       0x181e1a858 _dispatch_queue_override_invoke + 720
+45  libdispatch.dylib             	       0x181e27b94 _dispatch_root_queue_drain + 340
+46  libdispatch.dylib             	       0x181e2839c _dispatch_worker_thread2 + 172
+47  libsystem_pthread.dylib       	       0x1dd5d8dc4 _pthread_wqthread + 224
+48  libsystem_pthread.dylib       	       0x1dd5d892c start_wqthread + 8
+
+Thread 3:
+0   libsystem_pthread.dylib       	       0x1dd5d8924 start_wqthread + 0
+
+Thread 4 name:  com.apple.uikit.eventfetch-thread
+Thread 4:
+0   libsystem_kernel.dylib        	       0x1bca71aac mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1bca7207c mach_msg + 72
+2   CoreFoundation                	       0x18212bc88 __CFRunLoopServiceMachPort + 368
+3   CoreFoundation                	       0x18212ff90 __CFRunLoopRun + 1160
+4   CoreFoundation                	       0x182143174 CFRunLoopRunSpecific + 572
+5   Foundation                    	       0x18384feac -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 232
+6   Foundation                    	       0x18388efd0 -[NSRunLoop(NSRunLoop) runUntilDate:] + 88
+7   UIKitCore                     	       0x1848c4ef4 -[UIEventFetcher threadMain] + 512
+8   Foundation                    	       0x18389cbdc __NSThread__start__ + 792
+9   libsystem_pthread.dylib       	       0x1dd5da338 _pthread_start + 116
+10  libsystem_pthread.dylib       	       0x1dd5d8938 thread_start + 8
+
+Thread 5:
+0   libsystem_pthread.dylib       	       0x1dd5d8924 start_wqthread + 0
+
+Thread 6:
+0   libsystem_pthread.dylib       	       0x1dd5d8924 start_wqthread + 0
+
+Thread 7:
+0   libsystem_pthread.dylib       	       0x1dd5d8924 start_wqthread + 0
+
+
+Thread 2 crashed with ARM Thread State (64-bit):
+    x0: 0x0000000000000000   x1: 0x0000000000000000   x2: 0x0000000000000000   x3: 0x0000000000000000
+    x4: 0x000000015f18d195   x5: 0x0000000000000015   x6: 0x0000000000000020   x7: 0x0000000000000023
+    x8: 0x000000016d027000   x9: 0x26dbc5b6b18a2965  x10: 0x20693d6d6f726620  x11: 0x7365747962203d21
+   x12: 0x203d2120693d6d6f  x13: 0x65725f7365747962  x14: 0x0000000000000010  x15: 0x272934383336313d
+   x16: 0x0000000000000148  x17: 0x0000000048200000  x18: 0x0000000000000000  x19: 0x0000000000000006
+   x20: 0x0000000000001c03  x21: 0x000000016d0270e0  x22: 0x0000000000000000  x23: 0x0000000000000114
+   x24: 0x000000016d0270e0  x25: 0x00000001f7660204  x26: 0x00000000000005ff  x27: 0x00000001f6db1940
+   x28: 0x0000000002ffffff   fp: 0x000000016d0240e0   lr: 0x00000001dd5e4844
+    sp: 0x000000016d0240c0   pc: 0x00000001bca77bbc cpsr: 0x40000000
+   far: 0x00000001f7b8f4f8  esr: 0x56000080  Address size fault
+
+Binary Images:
+       0x1bca71000 -        0x1bcaa4fff libsystem_kernel.dylib arm64  <102e8613667633f6a0b4f6e86a8636ce> /usr/lib/system/libsystem_kernel.dylib
+       0x182125000 -        0x182562fff CoreFoundation arm64  <eec1287d059b38c89bc158a0c8b1e6c2> /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+       0x1a2c5d000 -        0x1a2c65fff GraphicsServices arm64  <bb434d860991365fbed3c3923cf3073c> /System/Library/PrivateFrameworks/GraphicsServices.framework/GraphicsServices
+       0x184460000 -        0x185bfbfff UIKitCore arm64  <9d3018772593385c8f72f075aa0b48fa> /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+       0x1dd5f6000 -        0x1dd62efff libxpc.dylib arm64  <184a84ec2aaa3c9780d3d7584a851a54> /usr/lib/system/libxpc.dylib
+       0x183838000 -        0x183b1cfff Foundation arm64  <f9235fc7ec4e31c9b56e95cf10b07239> /System/Library/Frameworks/Foundation.framework/Foundation
+       0x1bfb7f000 -        0x1bfbb2fff PlugInKit arm64  <10d9e3085df43d539205e3f5503b3d41> /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
+       0x1cb92f000 -        0x1cb976fff ExtensionFoundation arm64  <2440eee59988368ca58390353581845c> /System/Library/PrivateFrameworks/ExtensionFoundation.framework/ExtensionFoundation
+       0x10604c000 -        0x10609ffff dyld arm64  <16c8ea1a1c773f4f97a66ae7fb25eb29> /usr/lib/dyld
+       0x1dd5d7000 -        0x1dd5e7fff libsystem_pthread.dylib arm64  <6679a5b3a40a37a7b1c5565a0f5cb6ab> /usr/lib/system/libsystem_pthread.dylib
+       0x18c885000 -        0x18c900fff libsystem_c.dylib arm64  <f90936ac0df438aeb3ea2cd6e5f97e64> /usr/lib/system/libsystem_c.dylib
+       0x199acb000 -        0x199ae1fff libc++abi.dylib arm64  <f92ef016d0cd31829fc01ec48f372556> /usr/lib/libc++abi.dylib
+       0x1999cf000 -        0x199a06fff libobjc.A.dylib arm64  <f1b36686ed4835ef88960cea8e9da1c0> /usr/lib/libobjc.A.dylib
+       0x102eec000 -        0x104053fff realmcrash share arm64  <7c00713f5f1132e8ad4938bda143660b> /private/var/containers/Bundle/Application/55FE472E-9E9C-4582-ADF2-9F4BE9E077AB/realmcrash.app/PlugIns/realmcrash share.appex/realmcrash share
+       0x181e14000 -        0x181e96fff libdispatch.dylib arm64  <9ccdbde315e13a45b3304a5e2c3f92bd> /usr/lib/system/libdispatch.dylib
+
+EOF
