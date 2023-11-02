@@ -40,7 +40,7 @@ class RealmHelper {
             print("test started")
             for i in 0..<UInt64.max {
                 realm.beginWrite()
-                if i % 100 == 0 {
+                if i % 20 == 0 {
                     print("transaction \(i) started")
                 }
                 let contact = SVContact()
@@ -48,7 +48,7 @@ class RealmHelper {
                 contact.property1 = UUID().uuidString
                 realm.add(contact)
                 try? realm.commitWrite()
-                if i % 100 == 0 {
+                if i % 20 == 0 {
                     print("transaction \(i) committed")
                 }
             }
