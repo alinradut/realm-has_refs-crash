@@ -27,42 +27,60 @@ class RealmHelper {
         return try! Realm(configuration: configuration)
     }
 
-    static func startWriteTest() {
+    static func startWriteTest(onUpdate: @escaping ((Int) -> Void)) {
         let realm = readWriteInstance()
 
         realm.beginWrite()
         realm.deleteAll()
         try? realm.commitWrite()
 
+        var tx: Int = 0
         DispatchQueue.global(qos: .userInitiated).async {
             let realm = readWriteInstance()
 
             print("test started")
-            for i in 0..<UInt64.max {
+
+            while true {
                 realm.beginWrite()
-                if i % 20 == 0 {
-                    print("transaction \(i) started")
+                print("transaction \(tx) started")
+
+                for _ in 0..<100 {
+                    let contact = SVContact()
+                    contact.identifier = UUID().uuidString
+                    contact.property1 = UUID().uuidString
+                    realm.add(contact)
                 }
-                let contact = SVContact()
-                contact.identifier = UUID().uuidString
-                contact.property1 = UUID().uuidString
-                realm.add(contact)
-                try? realm.commitWrite()
-                if i % 20 == 0 {
-                    print("transaction \(i) committed")
+
+                do {
+                    try realm.commitWrite()
+                    print("transaction \(tx) committed")
+                    DispatchQueue.main.async {
+                        onUpdate(tx)
+                    }
                 }
+                catch {
+                    print("error while committing \(tx): \(error)")
+                }
+                tx += 1
             }
         }
     }
 
-    static func startReadTest() {
+    static func startReadTest(onUpdate: @escaping ((Int) -> Void)) {
 
         DispatchQueue.global(qos: .default).async {
 
             while true {
-                let realm = readOnlyInstance()
-                let objects = realm.objects(SVContact.self)
-                print("fetched \(Array(objects).count) records")
+                autoreleasepool {
+                    let realm = readWriteInstance()
+                    let objects = realm.objects(SVContact.self)
+                    let count = Array(objects).count
+                    print("fetched \(count) records")
+                    sleep(1)
+                    DispatchQueue.main.async {
+                        onUpdate(count)
+                    }
+                }
             }
         }
     }

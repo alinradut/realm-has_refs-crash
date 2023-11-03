@@ -10,6 +10,11 @@ import Social
 
 class ShareViewController: UIViewController {
 
+    lazy var label: UILabel = {
+        let label = UILabel(frame: CGRect(x: 100, y: 150, width: 100, height: 40))
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,9 +25,13 @@ class ShareViewController: UIViewController {
         button.setTitle("Run test", for: .normal)
         button.addTarget(self, action: #selector(onBtnTapped), for: .touchUpInside)
         view.addSubview(button)
+
+        view.addSubview(label)
     }
 
     @objc func onBtnTapped() {
-        RealmHelper.startReadTest()
+        RealmHelper.startReadTest {
+            self.label.text = "\($0)"
+        }
     }
 }
