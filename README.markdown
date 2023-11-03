@@ -9,7 +9,7 @@
 7. Tap "Run test" in the sharing extension.
 
 After a short time the sharing extension crashes hits an exception with `abort() called`: 
-
+   
 `libc++abi: terminating with uncaught exception of type 
 realm::util::DecryptionFailed: Decryption failed: 'unable to decrypt after 0 seconds (retry_count=0, from=i != bytes_read, size=16384)'`
 
